@@ -1,0 +1,13 @@
+# Core dependencies
+opencv-python
+dlib
+numpy
+
+# Database (SQLite is built-in, MySQL optional)
+mysql-connector-python
+
+# For HTTP requests / API calls
+requests
+
+# For handling environment variables (if you add .env later)
+python-dotenv
