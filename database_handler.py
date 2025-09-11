@@ -1,8 +1,8 @@
-from db_config import get_connection
+from db_config import get_db_connection
 
 def insert_alert(alert):
     try:
-        conn = get_connection()
+        conn = get_db_connection()
         cur = conn.cursor()
         cur.execute("""
             INSERT INTO alerts (driver_id, location, status, image_path)

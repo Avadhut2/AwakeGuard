@@ -8,7 +8,7 @@ from alert_handler import enqueue_alert, process_alerts
 
 def trigger_buzzer():
     try:
-        esp32_ip = "http://192.168.168.254/buzz"  # Replace with your ESP32 IP
+        esp32_ip = "http://192.168.168.254/buzz"  
         r = requests.get(esp32_ip, timeout=3)
         if r.status_code == 200:
             print("🔔 Buzzer triggered on ESP32")
