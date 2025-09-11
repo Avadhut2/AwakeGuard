@@ -1,4 +1,4 @@
-## Awake Guard – Driver Drowsiness Detection System
+# Awake Guard – Driver Drowsiness Detection System
 
 Awake Guard is an IoT-based driver monitoring system that detects drowsiness using an ESP32-CAM video feed, triggers a buzzer alarm via a separate ESP32 board, and logs alerts into a Supabase PostgreSQL database. The system includes a Flask backend API and a dark-theme web dashboard to visualize driver status and alerts.
 ---
@@ -15,7 +15,7 @@ Awake Guard is an IoT-based driver monitoring system that detects drowsiness usi
 - requests (for API integration)
 
 
-## Contributors
+# Contributors
 
 Avadhut Satpute – Project Lead, Backend, Database & API Integration,  ESP32-CAM & Hardware Integration
 
