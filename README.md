@@ -11,7 +11,7 @@ Awake Guard is an IoT-based driver monitoring system that detects drowsiness usi
 - OpenCV
 - dlib
 - numpy
-- sqlite3 / MySQL (for database)
+- MySQL (for database)
 - requests (for API integration)
 
 
