@@ -5,7 +5,6 @@ from drowsiness_detector import detect_and_alert
 
 load_dotenv()
 
-# Try ESP32-CAM first, fallback to webcam
 url = os.getenv("ESP32_CAM_URL")
 use_webcam = False
 
@@ -42,10 +41,8 @@ while True:
             print("⚠️ No frame received from ESP32-CAM")
         break
 
-    # Call the drowsiness detection function
     counter = detect_and_alert(frame, counter, frame_count)
     
-    # Add visual feedback
     if counter > 0:
         drowsiness_detected = True
         cv2.putText(frame, f"DROWSY DETECTED! Counter: {counter}", (10, 30), 
@@ -55,7 +52,6 @@ while True:
         cv2.putText(frame, "AWAKE", (10, 30), 
                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
     
-    # Show frame info
     cv2.putText(frame, f"Frame: {frame_count}", (10, frame.shape[0] - 20), 
                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
     

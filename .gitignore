@@ -1,17 +1,12 @@
-# Ignore Python cache
 __pycache__/
 *.pyc
 
-# Ignore VSCode/IDE settings
 .vscode/
 *.idea/
 
-# Ignore environment files
 .env
 
-# Ignore dataset / large model files
 shape_predictor_68_face_landmarks.dat
 *.dat
  
-# Frontend config (real keys)
 frontend/js/config.js

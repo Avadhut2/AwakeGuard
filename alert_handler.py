@@ -4,7 +4,6 @@ from database_handler import insert_alert
 alert_queue = deque()
 frame_stack = []
 
-# Linked List for history
 class AlertNode:
     def __init__(self, data):
         self.data = data
