@@ -11,3 +11,7 @@ requests
 
 # For handling environment variables (if you add .env later)
 python-dotenv
+ 
+# Web API
+Flask
+Flask-CORS

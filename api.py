@@ -1,9 +1,16 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
+import os
 from db_config import get_db_connection
 
 app = Flask(__name__)
+CORS(app)
 
-#  1. Get all alerts
+@app.route("/captures/<path:filename>")
+def serve_captures(filename):
+    captures_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "captures")
+    return send_from_directory(captures_dir, filename)
+
 @app.route("/alerts", methods=["GET"])
 def get_alerts():
     conn = get_db_connection()
@@ -27,7 +34,6 @@ def get_alerts():
     ]
     return jsonify(alerts)
 
-#  2. Get latest status for a driver
 @app.route("/latest_status/<int:driver_id>", methods=["GET"])
 def latest_status(driver_id):
     conn = get_db_connection()
@@ -42,7 +48,6 @@ def latest_status(driver_id):
     else:
         return jsonify({"driver_id": driver_id, "status": "Unknown"}), 404
 
-#  3. List drivers
 @app.route("/drivers", methods=["GET"])
 def get_drivers():
     conn = get_db_connection()
@@ -55,7 +60,6 @@ def get_drivers():
     drivers = [{"driver_id": r[0], "name": r[1], "phone": r[2], "email": r[3]} for r in rows]
     return jsonify(drivers)
 
-#  4. Add new alert 
 @app.route("/add_alert", methods=["POST"])
 def add_alert():
     data = request.json

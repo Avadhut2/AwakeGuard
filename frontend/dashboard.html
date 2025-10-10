@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awake Guard — Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:," />
+</head>
+<body class="min-h-screen bg-slate-50">
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-lg font-semibold text-slate-800">Awake Guard Dashboard</h1>
+      <div class="flex items-center gap-3">
+        <span id="user-email" class="text-sm text-slate-600"></span>
+        <button id="logout-btn" class="inline-flex items-center rounded-lg bg-slate-800 px-3 py-1.5 text-sm font-medium text-white hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-700">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <section class="bg-white rounded-xl border border-slate-200 shadow-sm">
+      <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+        <h2 class="text-base font-semibold text-slate-800">Alerts</h2>
+        <button id="refresh-btn" class="inline-flex items-center rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Refresh</button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-slate-200">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Driver ID</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Driver Name</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Date</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Time</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Location</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-slate-600 uppercase tracking-wider">Status</th>
+            </tr>
+          </thead>
+          <tbody id="alerts-tbody" class="bg-white divide-y divide-slate-100">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="empty-state" class="hidden p-6 text-center text-slate-500 text-sm">No alerts found.</div>
+      <div id="error-state" class="hidden p-6 text-center text-red-600 text-sm"></div>
+    </section>
+  </main>
+
+  <!-- Supabase UMD build -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.6/dist/umd/supabase.min.js" integrity="sha384-7pzzqY0i5mV0GzX8d+9rj7f0f9D0gdKjF4Q183Gg9lKZfF3oqo3t4T3gY+HaxWqB" crossorigin="anonymous"></script>
+  <!-- App config -->
+  <script src="./js/config.js"></script>
+  <!-- Supabase client init -->
+  <script src="./js/supabaseClient.js"></script>
+  <!-- Auth guard + logout -->
+  <script src="./js/authGuard.js"></script>
+  <!-- Dashboard data fetching -->
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>
+
+

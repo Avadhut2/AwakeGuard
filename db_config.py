@@ -1,4 +1,3 @@
-# db_config.py
 import os
 import psycopg2
 from urllib.parse import urlparse

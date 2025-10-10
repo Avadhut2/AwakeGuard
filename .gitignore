@@ -12,3 +12,6 @@ __pycache__/
 # Ignore dataset / large model files
 shape_predictor_68_face_landmarks.dat
 *.dat
+ 
+# Frontend config (real keys)
+frontend/js/config.js

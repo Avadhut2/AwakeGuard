@@ -30,10 +30,10 @@ while True:
     counter = detect_and_alert(frame, counter, frame_count)
     frame_count += 1
 
-    # Show preview
+    
     cv2.imshow("Awake Guard - ESP32-CAM Drowsiness Monitor", frame)
 
-    # Press Q to quit
+   
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
