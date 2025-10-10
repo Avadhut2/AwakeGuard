@@ -11,20 +11,20 @@ Awake Guard is an IoT-based driver monitoring system that detects drowsiness usi
 - OpenCV
 - dlib
 - numpy
-- sqlite3 / MySQL (for database)
+- MySQL (for database)
 - requests (for API integration)
  - Flask, Flask-CORS (for web API and frontend access)
 
 
 # Contributors
 
-Avadhut Satpute – Project Lead, Backend, Database & API Integration,  ESP32-CAM & Hardware Integration
+[Avadhut Satpute](https://github.com/Avadhut2) – Project Lead, Backend, Database & API Integration,  ESP32-CAM & Hardware Integration
 
-Rajvardhan Varpe – Whatsapp and Telegram Alert Integration
+[Rajvardhan Varpe](https://github.com/Rajvardhanvarpe) – Whatsapp and Telegram Alert Integration
 
-Komal Sabarad – Frontend & Dashboard
+[Komal Sabarad](https://github.com/KomalSabarad) – Frontend & Dashboard
 
-Swayam Patil  – Frontend & Dashboard
+[Swayam Patil](https://github.com/swayampatil7)  – Frontend & Dashboard
 
 
 ## What we did until now
