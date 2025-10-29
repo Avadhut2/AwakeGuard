@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from drowsiness_detector import detect_and_alert
 
 
+
 load_dotenv()
 
 url = os.getenv("ESP32_CAM_URL")

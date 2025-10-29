@@ -1,0 +1,67 @@
+import requests
+import geocoder
+import os
+
+BOT_TOKEN = '8280820663:AAFpmq_xM215QPbOcDO_hy4HOHVFtePykG8'
+CHAT_ID = '5713802429'
+
+# === Helper: Send GET request for updates ===
+def get_updates():
+    url = f'https://api.telegram.org/bot{BOT_TOKEN}/getUpdates'
+    r = requests.get(url)
+    print("DEBUG get_updates:", r.status_code, r.text)
+    return r.json()
+
+# === Send a text message ===
+def send_message(text):
+    url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage'
+    payload = {'chat_id': CHAT_ID, 'text': text}
+    r = requests.post(url, data=payload)
+    print("DEBUG send_message:", r.status_code, r.text)
+    return r
+
+# === Send a photo ===
+def send_photo(photo_path):
+    if not os.path.exists(photo_path):
+        print(f"❌ Photo not found: {photo_path}")
+        return
+    url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto'
+    with open(photo_path, 'rb') as f:
+        files = {'photo': f}
+        data = {'chat_id': CHAT_ID}
+        r = requests.post(url, files=files, data=data)
+    print("DEBUG send_photo:", r.status_code, r.text)
+    return r
+
+# === Send a video ===
+def send_video(video_path):
+    if not os.path.exists(video_path):
+        print(f"❌ Video not found: {video_path}")
+        return
+    url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendVideo'
+    with open(video_path, 'rb') as f:
+        files = {'video': f}
+        data = {'chat_id': CHAT_ID}
+        r = requests.post(url, files=files, data=data)
+    print("DEBUG send_video:", r.status_code, r.text)
+    return r
+
+# === Send GPS location ===
+def send_location():
+    g = geocoder.ip('me')
+    if g.ok and g.latlng:
+        lat, lon = g.latlng
+        url = f'https://api.telegram.org/bot{BOT_TOKEN}/sendLocation'
+        payload = {'chat_id': CHAT_ID, 'latitude': lat, 'longitude': lon}
+        r = requests.post(url, data=payload)
+        print("DEBUG send_location:", r.status_code, r.text)
+        return r
+    else:
+        print("❌ Could not get location.")
+        send_message("❌ Could not retrieve location.")
+
+# === Example run ===
+send_message("⚠️ Drowsiness Detected! Please take a break.")
+send_photo("drowsy.jpg")
+send_video("drowsy_clip.mp4")
+send_location()
