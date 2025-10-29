@@ -9,6 +9,7 @@
 - [📘 Overview](#-overview)
 - [🧠 Tech Stack](#-tech-stack)
 - [🗂️ Project Structure](#️-project-structure)
+- [💾 Shape Predictor](#download-shape_predictor_68_face_landmarksdat)
 - [⚙️ Hardware Requirements](#️-hardware-requirements)
 - [🧰 Software Requirements](#-software-requirements)
 - [🔑 Environment Setup](#-environment-setup)
@@ -80,6 +81,11 @@ AwakeGuard/
 
 
 ---
+
+## Download [shape_predictor_68_face_landmarks.dat](https://drive.google.com/file/d/1MqeJUeNOUvAphKZgIdwkDLevOXj-A-Lp/view?usp=drive_link)
+
+---
+
 
 ## ⚙️ Hardware Requirements  
 
