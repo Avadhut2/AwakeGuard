@@ -3,8 +3,8 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 // ----------------------
 // Supabase Setup
 // ----------------------
-const supabaseUrl = "https://upevjliguncwatxuwdfi.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVwZXZqbGlndW5jd2F0eHV3ZGZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwNTU2NzksImV4cCI6MjA3MjYzMTY3OX0.m2yV0CUX-gnQc3RUrevkkpTvCMZf_DBnUamf6FeX1Yk" // Replace with your anon/public key
+const supabaseUrl = ""
+const supabaseKey = "" // Replace with your anon/public key
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const container = document.getElementById('alert-container')
